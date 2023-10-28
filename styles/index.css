@@ -13,6 +13,7 @@ body {
 main {
   flex: 1 0 auto;
   overflow: hidden;
+  margin-top: 10%;
 }
 
 footer {
@@ -27,3 +28,4 @@ footer {
 .unset {
   all: unset;
 }
+
