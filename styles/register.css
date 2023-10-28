@@ -1,0 +1,21 @@
+#btn-guardar-register{
+    background-color: #DC3545;
+    color: #f9f9f9;
+
+    &:hover{
+        background-color: #d64352;
+        color: #000000;
+    }
+}
+
+
+
+.main-section{
+    margin-top: 10%;
+    margin-bottom: 15%;
+
+
+    @media (max-width: 768px) {
+        margin-top: 30%;
+    }
+}
