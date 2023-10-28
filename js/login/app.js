@@ -64,7 +64,7 @@ formLogin.addEventListener('submit', (e) => {
         color: '#f9f9f9',
       })
       .then(() => {
-        window.location.href = '../../pages/home.html';
+        window.location.href = '../index.html';
     });
   } else {
   credentialsAlert.classList.remove('d-none');
