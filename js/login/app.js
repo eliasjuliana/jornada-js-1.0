@@ -1,4 +1,7 @@
 'use strict'
+import { agregarContactoALS } from "../helpers/helpers.js";
+import { Contacto } from "../register/Contacto.js";
+import { añadirContacto } from "../register/abm.js";
 import { User } from "./User.js";
 
 
@@ -8,10 +11,11 @@ if (isLogged) {
 window.location.href = './admin/admin.html';
 }
 
+
+const adminUser = new Contacto('admin', '12349', 'admin@gmail.com');
+agregarContactoALS(adminUser)
+
 const users = JSON.parse(localStorage.getItem('contactos'));
-
-const adminUser = new User('admin@gmail.com', '12349');
-
 
 const formLogin = document.getElementById('form-login');
 const emailInput = document.getElementById('email-login');
@@ -43,7 +47,7 @@ formLogin.addEventListener('submit', (e) => {
     sessionStorage.setItem('isLogged', true);
     sessionStorage.setItem('user', JSON.stringify(email));
     
-    // if (email === adminUser.email) {
+    if (email === adminUser.email) {
 
       credentialsAlert.classList.add('d-none');
 
@@ -62,9 +66,9 @@ formLogin.addEventListener('submit', (e) => {
       .then(() => {
         window.location.href = '../../pages/home.html';
     });
-    // } else {
-    //   credentialsAlert.classList.remove('d-none');
-    // }
+  } else {
+  credentialsAlert.classList.remove('d-none');
+}
   } else {
     alert('Usuario y contraseña no válidos.')
   }
